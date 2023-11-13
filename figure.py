@@ -93,6 +93,13 @@ class Circle(Figure):
             raise ValueError('Radius must be integer positive')
 
 
+class Triangle(Figure):
+
+    def __init__(self, x1, y1, x2, y2, x3, y3):
+        pass
+
+    def output(self):
+        pass
 
 
 

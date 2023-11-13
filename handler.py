@@ -1,4 +1,4 @@
-from figure import Circle, Square, Rectangle
+from figure import Circle, Square, Rectangle, Triangle
 
 
 class ShapeInputHandler:
@@ -31,8 +31,10 @@ class ShapeInputHandler:
             return Rectangle(*ShapeInputHandler.rectangle_handler(items))
         if shape_type == 'Circle':
             return Circle(ShapeInputHandler.circle_handler(items))
+        if shape_type == 'Triangle':
+            return Triangle(*ShapeInputHandler.triangle_handler(items))
         else:
-            raise ValueError('Incorrect data input')
+            raise ValueError(f'Incorrect data input for {shape_type}')
 
     @staticmethod
     def square_handler(items):
@@ -70,6 +72,10 @@ class ShapeInputHandler:
         side = int(items[5])
 
         return side
+
+    @staticmethod
+    def triangle_handler(items):
+        return [0, 0, 0, 0, 0, 0]
 
 
 # print(ShapeInputHandler.handler(input()).output())

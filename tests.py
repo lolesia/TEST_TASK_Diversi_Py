@@ -1,5 +1,5 @@
 import unittest
-from figure import Square, Rectangle, Circle
+from figure import Square, Rectangle, Circle, Triangle
 from handler import ShapeInputHandler
 from math import pi, sqrt
 
@@ -84,7 +84,12 @@ class TestShapeInputHandler(unittest.TestCase):
         self.assertIsInstance(circle, Circle)
         self.assertEqual(circle.side, 2)
 
+    def test_triangle_creation(self):
+        shape_input = 'Triangle Point1 5 5 Point2 8 8 Point3 10 2'
+        triangle = ShapeInputHandler.handler(shape_input)
+        self.assertIsInstance(triangle, Triangle)
+
     def test_invalid_input(self):
-        shape_input = "Triangle 3 4 5"
+        shape_input = "Dog 3 4 5"
         with self.assertRaises(ValueError):
             ShapeInputHandler.handler(shape_input)
