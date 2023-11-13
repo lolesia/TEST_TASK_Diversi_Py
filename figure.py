@@ -96,7 +96,9 @@ class Circle(Figure):
 class Triangle(Figure):
 
     def __init__(self, x1, y1, x2, y2, x3, y3):
-        pass
+        super().__init__(x1, y1, x2, y2, None)
+        self.x3 = x3
+        self.y3 = y3
 
     def output(self):
         pass

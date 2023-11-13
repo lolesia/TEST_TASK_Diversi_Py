@@ -88,6 +88,12 @@ class TestShapeInputHandler(unittest.TestCase):
         shape_input = 'Triangle Point1 5 5 Point2 8 8 Point3 10 2'
         triangle = ShapeInputHandler.handler(shape_input)
         self.assertIsInstance(triangle, Triangle)
+        self.assertEqual(triangle.x1, 5)
+        self.assertEqual(triangle.y1, 5)
+        self.assertEqual(triangle.x2, 8)
+        self.assertEqual(triangle.y2, 8)
+        self.assertEqual(triangle.x3, 10)
+        self.assertEqual(triangle.y3, 2)
 
     def test_invalid_input(self):
         shape_input = "Dog 3 4 5"

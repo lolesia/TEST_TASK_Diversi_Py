@@ -75,7 +75,10 @@ class ShapeInputHandler:
 
     @staticmethod
     def triangle_handler(items):
-        return [0, 0, 0, 0, 0, 0]
+        x1, y1 = int(items[2]), int(items[3])
+        x2, y2 = int(items[5]), int(items[6])
+        x3, y3 = int(items[8]), int(items[9])
+        return x1, y1, x2, y2, x3, y3
 
 
 # print(ShapeInputHandler.handler(input()).output())
