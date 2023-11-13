@@ -101,9 +101,12 @@ class Triangle(Figure):
         self.y3 = y3
 
     def output(self):
-        triangle_perimeter = 0
-        triangle_area = 1
-        return f"Circle Perimeter {triangle_perimeter} Area {triangle_area}"
+        if all(isinstance(val, int) for val in [self.x1, self.y1, self.x2, self.y2, self.x3, self.y3]):
+            triangle_perimeter = 0
+            triangle_area = 1
+            return f"Circle Perimeter {triangle_perimeter} Area {triangle_area}"
+        else:
+            raise ValueError('The coordinates must be integer')
 
 
 

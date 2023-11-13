@@ -73,6 +73,13 @@ class TestTriangle(unittest.TestCase):
         triangle_area = 1
         self.assertEqual(triangle.output(), f"Circle Perimeter {triangle_perimeter} Area {triangle_area}")
 
+    def test_output_triangle_not_integer(self):
+        x1, y1 = 5, 'a'
+        x2, y2 = 8, 8
+        x3, y3 = 10, 2
+        with self.assertRaises(ValueError):
+            triangle = Triangle(x1, y1, x2, y2, x3, y3)
+            triangle.output()
 
 
 class TestShapeInputHandler(unittest.TestCase):
