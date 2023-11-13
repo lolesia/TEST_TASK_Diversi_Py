@@ -1,6 +1,7 @@
 import unittest
-from figure import Square, Rectangle, Circle, ShapeInputHandler
-from math import pi
+from figure import Square, Rectangle, Circle
+from handler import ShapeInputHandler
+from math import pi, sqrt
 
 
 class TestSquare(unittest.TestCase):
