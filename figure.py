@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from math import pi
+from math import pi, sqrt
 
 
 class Figure(ABC):
@@ -102,7 +102,10 @@ class Triangle(Figure):
 
     def output(self):
         if all(isinstance(val, int) for val in [self.x1, self.y1, self.x2, self.y2, self.x3, self.y3]):
-            triangle_perimeter = 0
+            side1 = sqrt((self.x2 - self.x1)**2 + (self.y2 - self.y1)**2)
+            side2 = sqrt((self.x3 - self.x2)**2 + (self.y3 - self.y2)**2)
+            side3 = sqrt((self.x1 - self.x3)**2 + (self.y1 - self.y3)**2)
+            triangle_perimeter = side1 + side2 + side3
             triangle_area = 1
             return f"Circle Perimeter {triangle_perimeter} Area {triangle_area}"
         else:

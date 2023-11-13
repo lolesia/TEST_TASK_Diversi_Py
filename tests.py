@@ -69,8 +69,17 @@ class TestTriangle(unittest.TestCase):
         x2, y2 = 8, 8
         x3, y3 = 10, 2
         triangle = Triangle(x1, y1, x2, y2, x3, y3)
-        triangle_perimeter = 0
+        triangle_perimeter = 16.398147902301346
         triangle_area = 1
+        self.assertEqual(triangle.output(), f"Circle Perimeter {triangle_perimeter} Area {triangle_area}")
+
+    def test_output_triangle_2(self):
+        x1, y1 = 6, 4
+        x2, y2 = 4, 4
+        x3, y3 = 1, 12
+        triangle = Triangle(x1, y1, x2, y2, x3, y3)
+        triangle_perimeter = 19.977984877374134
+        triangle_area = 5
         self.assertEqual(triangle.output(), f"Circle Perimeter {triangle_perimeter} Area {triangle_area}")
 
     def test_output_triangle_not_integer(self):
