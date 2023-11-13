@@ -101,7 +101,9 @@ class Triangle(Figure):
         self.y3 = y3
 
     def output(self):
-        pass
+        triangle_perimeter = 0
+        triangle_area = 1
+        return f"Circle Perimeter {triangle_perimeter} Area {triangle_area}"
 
 
 
